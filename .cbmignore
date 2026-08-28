@@ -1,0 +1,5 @@
+# codebase-memory-mcp — keep the structural graph on the ACTIVE relay source
+# (src/index.ts). worker.js is the prebuilt esbuild bundle: it re-declares every
+# function of src/ and drags in the whole bundled noble-curves dependency, which
+# on its own outweighs the real code by 150 nodes to 9.
+worker.js

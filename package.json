@@ -1,0 +1,22 @@
+{
+  "name": "genossig",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "worker.js",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --outfile=worker.js --platform=neutral --target=es2020 --format=esm --minify=false --keep-names --external:node:*",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@noble/curves": "^1.6.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260101.0",
+    "esbuild": "^0.19.12",
+    "wrangler": "^3.0.0"
+  },
+  "description": "GenosSIG \u2014 ephemeral Nostr signalling relay for GenosDB peer discovery"
+}

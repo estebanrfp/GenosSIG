@@ -1,0 +1,13 @@
+name = "genosdb-relay"
+compatibility_date = "2025-01-04"
+main = "worker.js"
+
+# The one Durable Object every session lives in
+[[durable_objects.bindings]]
+name = "RELAY_WEBSOCKET"
+class_name = "RelayWebSocket"
+
+# The Durable Object class, on the SQLite backend
+[[migrations]]
+tag = "v4"
+new_sqlite_classes = ["RelayWebSocket"]
